@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "inquirer": "^10.2.2",
+    "lorem-ipsum": "^2.0.8"
+  }
+}
