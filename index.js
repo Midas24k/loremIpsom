@@ -1,8 +1,9 @@
-const inquirer = require("inquirer");
+import inquirer from "inquirer";
 import { LoremIpsum } from "lorem-ipsum";
 import { type } from "os";
-const fs = require("fs");
-const generateMarkdown = require("./generateMarkdown.js");
+import fs from "fs";
+import path from "path";
+import generateMarkdown from "./generateMarkdown";
 
 const questions = [
     {
