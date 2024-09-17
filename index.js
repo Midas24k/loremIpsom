@@ -3,7 +3,7 @@ import { LoremIpsum } from "lorem-ipsum";
 import { type } from "os";
 import fs from "fs";
 import path from "path";
-import generateMarkdown from "./generateMarkdown";
+import generateMarkdown from './generateMarkdown.js';
 
 const questions = [
     {
