@@ -1,9 +1,11 @@
 import inquirer from "inquirer";
-import { LoremIpsum } from "lorem-ipsum";
 import { type } from "os";
 import fs from "fs";
 import path from "path";
-import generateMarkdown from './generateMarkdown.js';
+import  generateMarkdown from './utils/generateMarkdown.js';
+import lorem from "./utils/loremscript.js";
+const LoremIpsum = lorem;
+
 
 const questions = [
     {
@@ -31,16 +33,13 @@ const questions = [
 
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        const lorem = new LoremIpsum({
-            wordsPerSentence: answers.Words,
-            sentencesPerParagraph: answers.Sentences
-        });
-        const content = lorem.generateParagraphs(answers.Paragraphs);
-        fs.writeFile("README.md", generateMarkdown(content), (err) => {
+       const content = lorem.generate(answers.words, answers.sentences, answers.paragraphs);
+        fs.writeFile(path.join(process.cwd(), "lorem.txt"), generateMarkdown(content), (err) => {
             if (err) {
-                console.log(err);
+                console.error(err);
+                return;
             }
-            console.log("File created!");
+            console.log("Successfully created lorem.txt");
         });
     });
 }
