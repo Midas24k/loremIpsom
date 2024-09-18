@@ -10,9 +10,14 @@ const lorem = new LoremIpsum({
         min: 4
     }
 });
-
 lorem.generate = function(words, sentences, paragraphs) {
-    return this.generateParagraphs(paragraphs);
+    if (words) {
+        return this.generateWords(words);
+    } else if (sentences) {
+        return this.generateSentences(sentences);
+    } else if (paragraphs) {
+        return this.generateParagraphs(paragraphs);
+    }
 };
 
 export default lorem;

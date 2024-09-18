@@ -1,15 +1,20 @@
 function generateMarkdown(content) {
     return `# Lorem Ipsum Generator
 
-## Words per Sentence: ${content.wordsPerSentence.min} - ${content.wordsPerSentence.max}
+    ## Words
+    ${content.words}
 
-## Sentences per Paragraph: ${content.sentencesPerParagraph.min} - ${content.sentencesPerParagraph.max}
+    ---
 
-## Paragraphs: ${content.paragraphs}
+    ## Sentences
+    ${content.sentences}
 
----
 
-${content.output}`;
+    ---
+
+    ## Paragraphs
+    ${content.paragraphs}
+    `;
 }
 
 export default generateMarkdown;
