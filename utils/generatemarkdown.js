@@ -1,19 +1,11 @@
 function generateMarkdown(content) {
     return `# Lorem Ipsum Generator
 
-    ## Words
-    ${content.words}
+    ## Generated Content
+    ${content}
 
     ---
 
-    ## Sentences
-    ${content.sentences}
-
-
-    ---
-
-    ## Paragraphs
-    ${content.paragraphs}
     `;
 }
 
