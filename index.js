@@ -4,6 +4,7 @@ import path from "path";
 import generateMarkdown from './utils/generateMarkdown.js';
 import { LoremIpsum } from "lorem-ipsum"; 
 
+// Define the questions to ask the user
 const questions = [
     {
         type: "input",
@@ -34,7 +35,9 @@ const questions = [
     },
 ];
 
+// Initialize the application
 function init() {
+    // Prompt the user with the questions
     inquirer.prompt(questions).then((answers) => {
         // Parse user inputs
         const words = parseInt(answers.words) || 0;
@@ -82,4 +85,5 @@ function init() {
     });
 }
 
+// Start the application
 init();
